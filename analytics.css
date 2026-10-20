@@ -1,0 +1,1 @@
+.map-pulse{display:none}.map-pulse.active{display:block}.activity-map:not(:has(.map-pulse.active)):after{content:"No consented regional activity yet";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:.7rem 1rem;border:1px solid #2a5b7e;border-radius:99px;background:rgba(3,18,36,.88);color:#9ebbd0;font-size:.72rem;letter-spacing:.05em}

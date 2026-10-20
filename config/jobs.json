@@ -1,0 +1,31 @@
+{
+  "jobs": [
+    {
+      "id": "JOB-HRBP-001",
+      "title": {"en": "HR Business Partner", "es": "HR Business Partner"},
+      "location": {"en": "Long Island, NY · Hybrid", "es": "Long Island, NY · Híbrido"},
+      "type": {"en": "Full time", "es": "Tiempo completo"},
+      "department": "People Operations",
+      "summary": {"en": "Lead practical people programs for a growing multi-site organization.", "es": "Lidera programas prácticos de talento para una organización multi-sede en crecimiento."},
+      "status": "published"
+    },
+    {
+      "id": "JOB-SST-002",
+      "title": {"en": "SG-SST Consultant", "es": "Consultor(a) SG-SST"},
+      "location": {"en": "Bogotá / Remote", "es": "Bogotá / Remoto"},
+      "type": {"en": "Contract", "es": "Contrato"},
+      "department": "Compliance",
+      "summary": {"en": "Support Colombian clients with evidence-led safety management systems.", "es": "Apoya clientes colombianos con sistemas de seguridad basados en evidencia."},
+      "status": "published"
+    },
+    {
+      "id": "JOB-REC-003",
+      "title": {"en": "Talent Acquisition Specialist", "es": "Especialista en Adquisición de Talento"},
+      "location": {"en": "Remote · USA", "es": "Remoto · EE. UU."},
+      "type": {"en": "Full time", "es": "Tiempo completo"},
+      "department": "Recruiting",
+      "summary": {"en": "Build thoughtful recruiting journeys for priority client roles.", "es": "Construye procesos de reclutamiento de calidad para vacantes prioritarias."},
+      "status": "published"
+    }
+  ]
+}

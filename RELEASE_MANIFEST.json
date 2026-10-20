@@ -1,0 +1,302 @@
+[
+  {
+    "path": ".dockerignore",
+    "bytes": 132,
+    "sha256": "62ce0b65507129982ad3fa5377a91c5b0bab1d1855c006477d7a9a035800f6a6"
+  },
+  {
+    "path": ".env.production.example",
+    "bytes": 439,
+    "sha256": "8e9cec93f9cff1221e6061e8d853ad3fa6730f4d68cc735de6b12eb563bc0184"
+  },
+  {
+    "path": "analytics.css",
+    "bytes": 361,
+    "sha256": "6f9051bdffbf96e6385253ccd44ad36b8117bd535d18c184a4262c0143003615"
+  },
+  {
+    "path": "app.js",
+    "bytes": 89719,
+    "sha256": "f72539454668c624e98edfad34b307162a3d3e6f734b7f03c2a521db282de12f"
+  },
+  {
+    "path": "assets/brand/urbanhrpartnersconsulting-logo.png",
+    "bytes": 4178995,
+    "sha256": "0ab694b44dcdaabe3312749f7a494b2a1361960af389523a8e82a29b7a22c1b8"
+  },
+  {
+    "path": "assets/brand/xyomara-approved-v2.png",
+    "bytes": 1328485,
+    "sha256": "5b06f15f4c971160612b3e49a33819e0be00e4dc66a522c80ef4b47f6f5e31b4"
+  },
+  {
+    "path": "assets/brand/xyomara-master.png",
+    "bytes": 2637503,
+    "sha256": "eecaaa6322612799f7629361919dd9299c8cc1d0c3367aee4b4f1b543704901a"
+  },
+  {
+    "path": "assets/scenes/build-automate.png",
+    "bytes": 2230309,
+    "sha256": "afb69e528fce008de79f4185cb3efbfd3e2eec134b7884eee39cf033bd8abfaf"
+  },
+  {
+    "path": "assets/scenes/construction-logistics-action.png",
+    "bytes": 2514221,
+    "sha256": "595c5d92fc07a173cbb0fb9524f56ad669a4c607be1a858490c1a471e8d14863"
+  },
+  {
+    "path": "assets/scenes/diagnose-govern.png",
+    "bytes": 1959297,
+    "sha256": "c05bc4be3ae91206502231bd40c8e13006033c5b2371e43dabd0f45f9d4a21e0"
+  },
+  {
+    "path": "assets/scenes/global-command-center.png",
+    "bytes": 2509864,
+    "sha256": "fa989c4b8803ec43efe15834ccc31eabc624ab74732754dbc35e1b42d4cc5bbd"
+  },
+  {
+    "path": "assets/scenes/global-enterprise-command-center-v2.png",
+    "bytes": 2142952,
+    "sha256": "1cf0c22ce4f113cd49dd32938fd2f6175e5af3e994a44d7f2cb3d65b3b843611"
+  },
+  {
+    "path": "assets/scenes/home-health-action.png",
+    "bytes": 1980432,
+    "sha256": "affd347ad7675b9611728766b073a8cef19adc8101b3c41c95f91bbf24804ab0"
+  },
+  {
+    "path": "assets/scenes/manufacturing-action.png",
+    "bytes": 2365750,
+    "sha256": "ff96f642aedaaa4809be4a4573c70aa4cf89c2ba316f34c79bdb10904d3181dd"
+  },
+  {
+    "path": "assets/scenes/people-growth.png",
+    "bytes": 2362679,
+    "sha256": "49e256e3da46bc63574fbfc2b0aee1ba342a026c73fd191641472ebe8fec3c82"
+  },
+  {
+    "path": "brand-visibility-v7.css",
+    "bytes": 9129,
+    "sha256": "0f246d09a81a073e422a5a5edce6458f36904a706a21fa1e6f19d460e7273970"
+  },
+  {
+    "path": "compose.production.yml",
+    "bytes": 811,
+    "sha256": "e6634cbe8dc8df50f9d827782e771c03584501ad2c494e52aee7ec5bc6071c32"
+  },
+  {
+    "path": "config/capabilities.json",
+    "bytes": 15306,
+    "sha256": "602a8e9a3fb43664587650bffad9e71aba8a76dcd7ca9bc1c86e31d6bad9548e"
+  },
+  {
+    "path": "config/jobs.json",
+    "bytes": 1547,
+    "sha256": "6fb8660930edb7d701657793bfae8c28fa8055853e36fcbb8327384639eed82f"
+  },
+  {
+    "path": "config/service-intake-templates.json",
+    "bytes": 20060,
+    "sha256": "d28281e7bd6370fba7a1615cad7867351cfd5b922a201dc8dbe5d3ab384d8332"
+  },
+  {
+    "path": "config/site.json",
+    "bytes": 1926,
+    "sha256": "e54d20a9a0cfb20219e258f48c23ac3898ea005718a068d039cfd63b8485b292"
+  },
+  {
+    "path": "deploy/aws/parameters.example.json",
+    "bytes": 1073,
+    "sha256": "f0c9dabf70595f498a7d399ea0a62492dedcdc71477556632b3299abbd1c883b"
+  },
+  {
+    "path": "deploy/aws/README.md",
+    "bytes": 2570,
+    "sha256": "7a9767a86b2f70a32bf672292184a6615ddd5fbee6e4fbe041b7b6566d3abf6c"
+  },
+  {
+    "path": "deploy/aws/template.yaml",
+    "bytes": 14283,
+    "sha256": "9be6abfb8a3ea405a3ae56ca2617f2005e25da72eb8b3fa3cc7a47a86ee9d982"
+  },
+  {
+    "path": "deploy/Caddyfile",
+    "bytes": 156,
+    "sha256": "29552330383a1b656672533d9fb4f263e8a048a77ef47a883954e6d8d882e4d4"
+  },
+  {
+    "path": "deploy/DEPLOYMENT.md",
+    "bytes": 3053,
+    "sha256": "55874ebedb6144095a74c59a212a76906f90777b9e37c69ee4a2cdb760a6c6fa"
+  },
+  {
+    "path": "deploy/gcp/README.md",
+    "bytes": 2567,
+    "sha256": "4f18a560107e6642250858dd5483a381a87c1b9573770bf5d14436a4b9468ce8"
+  },
+  {
+    "path": "deploy/gcp/service.yaml",
+    "bytes": 2272,
+    "sha256": "bd7899ae3b27d12f41a7b2069e5200027f2422ff88332dfaf389d03052b55442"
+  },
+  {
+    "path": "deploy/generic/README.md",
+    "bytes": 1562,
+    "sha256": "0b2943bc55804c4805591038ed95a4f812a60bb1c55243aa6cda39734728e76d"
+  },
+  {
+    "path": "Dockerfile",
+    "bytes": 747,
+    "sha256": "29c1d412eea4f40479a13fb4c0637e4d286c6d77f91093b36757117e4983651e"
+  },
+  {
+    "path": "enterprise-release.css",
+    "bytes": 13358,
+    "sha256": "4eb4481e5c8966a96a311554a2507dbd646e4373eef7f1b50c7bc3d4df734c17"
+  },
+  {
+    "path": "enterprise.css",
+    "bytes": 5390,
+    "sha256": "5d97536f292c99ad25a8c5f8962b2929326a9e9233d265fff29273e70c95351b"
+  },
+  {
+    "path": "experience.css",
+    "bytes": 8676,
+    "sha256": "554ca7086208a470ecf498ee7009cb780bf9b82c36bf5ac616e07739caa84db1"
+  },
+  {
+    "path": "global.css",
+    "bytes": 3456,
+    "sha256": "f707b7141dc9ef8e8cda3027062f57348360c2c7dbc36923d980dd2db6ba2fde"
+  },
+  {
+    "path": "HOSTING_PORTABILITY.md",
+    "bytes": 950,
+    "sha256": "b946f103f22d58a06eaa6b4ae90bc1fe063b422b383a1d13ac9865a5b4e020c0"
+  },
+  {
+    "path": "index.html",
+    "bytes": 44718,
+    "sha256": "c4caf22953a318cfcef38e35678cbecfb40a3b4ab9be48ab09c36c3ed181ca1b"
+  },
+  {
+    "path": "intake.css",
+    "bytes": 910,
+    "sha256": "de8a15e76834b95010bf90b3407e72a47cabcb16580c14d3c283398fa86e8752"
+  },
+  {
+    "path": "intake.js",
+    "bytes": 1508,
+    "sha256": "23866b920f6702c41ccdc184513916c6a172be4afe26416278346d323165cb76"
+  },
+  {
+    "path": "locales.js",
+    "bytes": 42663,
+    "sha256": "462f67ff470d26df5088b060999604fae28127ee5a2ae6195499c3249c385b2c"
+  },
+  {
+    "path": "manifest.webmanifest",
+    "bytes": 422,
+    "sha256": "1f09b63c5ede804a518a4bbe578eed263030563c41ed40e615db0be3534b3b07"
+  },
+  {
+    "path": "media/catalog.json",
+    "bytes": 798,
+    "sha256": "812372747d668fd64a6449ed3e8d5bddbad384f15341d8a5b386b9b96bab7843"
+  },
+  {
+    "path": "platform-v2.css",
+    "bytes": 17678,
+    "sha256": "ce252060fd106771c2a6e825c266c24f6aa6b0013aa2caf9db75befdab9a0f61"
+  },
+  {
+    "path": "platform-v2.js",
+    "bytes": 2563,
+    "sha256": "7971cf4824e2973be77297198fd54ece8967e2e93d2aef3921c46cf2b0fd225a"
+  },
+  {
+    "path": "PRODUCTION_READINESS.md",
+    "bytes": 3359,
+    "sha256": "f0cdddfbf3817a389e059b1c942599e0794ed290b655a6fcd08c8effa5a021f0"
+  },
+  {
+    "path": "professional-contrast.css",
+    "bytes": 27838,
+    "sha256": "c0cc63e62a783cf9678e4ead9b71a0e5e4162c98b53e9ab5aebbc2d594afc872"
+  },
+  {
+    "path": "purpose.css",
+    "bytes": 270,
+    "sha256": "fbf68f20956264a28c89e67af3f4826903da6f1cb84d4eba2dddbe47510d9991"
+  },
+  {
+    "path": "purpose.js",
+    "bytes": 3112,
+    "sha256": "2a6a0a68f9070e9bf1cca54358cbf80bd7821fbf8efc8d4b79e7a335d13b8d76"
+  },
+  {
+    "path": "README.md",
+    "bytes": 2226,
+    "sha256": "7e93bfee099805584f9eb6c4c46a50f57c310a653c37301c37c1213ff4e9772c"
+  },
+  {
+    "path": "RELEASE_NOTES_2026-10-05.md",
+    "bytes": 2115,
+    "sha256": "24f7055e73de86bb163c67a97b118c8c171fd7450f998dcae7addcdc6c681ab2"
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 24,
+    "sha256": "bfaaa83e718f1e325d7e34ab54f7ff4b4827373de39b3e26f82e1224ff518c05"
+  },
+  {
+    "path": "responsive-fixes.css",
+    "bytes": 505,
+    "sha256": "2adc1e4f3f50cb7fbeb42869401a8c1586f03ec08fcc096db55eeaf2fbf9525c"
+  },
+  {
+    "path": "robots.txt",
+    "bytes": 131,
+    "sha256": "d712ef3d75953f1c6a110fdf11db009db478f4b118be556628f00f211b0ada63"
+  },
+  {
+    "path": "scene.css",
+    "bytes": 7023,
+    "sha256": "abed0f04d2d3d5a010b022ccbf11d3393f3e89e1d2ff3115812298cd8a7ac7be"
+  },
+  {
+    "path": "scripts/migrate_sqlite_to_postgres.py",
+    "bytes": 2105,
+    "sha256": "7820b559eda3ca7beb8d04a608d5fb956ee7950734c767969133863d7f309581"
+  },
+  {
+    "path": "SECURITY.md",
+    "bytes": 1259,
+    "sha256": "82fec74b650329093c4602ec598b267db3662cd52b75107ac635aec2981f3bdc"
+  },
+  {
+    "path": "server.py",
+    "bytes": 50669,
+    "sha256": "22d5a09c09690c7e66470a0114f7b8e69c056eae5ca6e0b399fc296df263b1e1"
+  },
+  {
+    "path": "sitemap.xml",
+    "bytes": 246,
+    "sha256": "af9e315d842256bf3cefd86c0c5147e09a9b8c3f24151cf6721e1ab46f7fd705"
+  },
+  {
+    "path": "styles.css",
+    "bytes": 17571,
+    "sha256": "98be55e339ebf2dd2cdfc4530a63ffc53c8b114fcdc7d59b956a7d6082d84c01"
+  },
+  {
+    "path": "VERSION",
+    "bytes": 13,
+    "sha256": "ab1e18b8a93460e084cd13aea20ef5edf8fc5aeb0114974ebfb1b9e4624552da"
+  },
+  {
+    "path": "visual-system-v6.css",
+    "bytes": 15960,
+    "sha256": "acc3865ea84b95273b5ebc2d58d1591e76d437699a014d4dc17671e35be41fc3"
+  }
+]

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.git/
+.gitignore
+data/*.db*
+evidence/
+tests/
+assets/media/source/
+*.zip
+.env
+.env.*
+!.env.production.example

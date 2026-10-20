@@ -1,0 +1,29 @@
+{
+  "brand": {
+    "name": "UrbanHRPartners Consulting",
+    "slogan": "Transforming Workplaces. Strengthening Business.",
+    "domain": "urbanhrpartnersconsulting.com"
+  },
+  "contacts": {
+    "colombia": {"label": "Colombia", "phone": "+57 316 053 3654", "whatsapp": "573160533654"},
+    "usa": {"label": "USA", "phone": "+1 516 870 9645", "whatsapp": "15168709645"},
+    "institutional_email": "info@urbanhrpartnersconsulting.com"
+  },
+  "integrations": [
+    {"key":"urbanhrpartners","label":"UrbanHRPartners","path":"/dashboard","roles":["admin","consultant","client"],"status":"local-ready"},
+    {"key":"crm","label":"CRM / Company360","path":"/crm","roles":["admin","consultant"],"status":"local-ready"},
+    {"key":"company-intelligence","label":"Company Intelligence","path":"/company-intelligence","roles":["admin","consultant","client"],"status":"local-ready"},
+    {"key":"hris","label":"HRIS","path":"/hris","roles":["admin","consultant"],"status":"local-ready"},
+    {"key":"ats","label":"ATS","path":"/ats","roles":["admin","consultant"],"status":"local-ready"},
+    {"key":"projects","label":"Projects","path":"/projects","roles":["admin","consultant","client"],"status":"local-ready"},
+    {"key":"academy","label":"Urban Academy","path":"/orientation","roles":["admin","consultant","client","learner"],"status":"local-ready"},
+    {"key":"analytics","label":"Analytics","path":"/analytics","roles":["admin","consultant","client"],"status":"local-ready"},
+    {"key":"urban360","label":"Urban360","path":"/urban360","roles":["admin","consultant","client"],"status":"local-ready"},
+    {"key":"urbanone","label":"UrbanOne / ODA","path":"/xiomy-page","roles":["admin","consultant","client"],"status":"local-ready"}
+  ],
+  "integration_base_url": "http://127.0.0.1:5000",
+  "social": {
+    "policy": "Approval required before publication",
+    "channels": ["LinkedIn", "YouTube", "Instagram", "Facebook"]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "assets": [
+    {
+      "id": "MEDIA-REFERENCE-001",
+      "title": {"en":"Institutional concept reference","es":"Referencia conceptual institucional"},
+      "file": "assets/media/source/institutional-reference.mp4",
+      "type": "video/mp4",
+      "language": "visual",
+      "audience": "internal-production",
+      "tags": ["institutional", "reference", "xyomara"],
+      "version": "0.1-reference",
+      "approval_state": "reference-only",
+      "publication_state": "internal",
+      "production_master": false,
+      "variants": ["16:9 source reference"],
+      "reuse_history": []
+    }
+  ],
+  "workflow": ["draft", "review", "approved", "scheduled", "published", "retired"],
+  "required_metadata": ["language", "audience", "tags", "version", "approval_state", "publication_state"]
+}

@@ -1,0 +1,58 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: urbanhrpartners-production
+  annotations:
+    run.googleapis.com/description: UrbanHRPartners Consulting public experience and governed gateway
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: '2'
+        autoscaling.knative.dev/maxScale: '8'
+        run.googleapis.com/execution-environment: gen2
+        run.googleapis.com/cloudsql-instances: REPLACE_PROJECT:REPLACE_REGION:urbanhrpartners-db
+        run.googleapis.com/cpu-throttling: 'false'
+        run.googleapis.com/startup-cpu-boost: 'true'
+    spec:
+      serviceAccountName: REPLACE_SERVICE_ACCOUNT
+      containerConcurrency: 80
+      timeoutSeconds: 60
+      containers:
+        - name: website
+          image: REPLACE_REGION-docker.pkg.dev/REPLACE_PROJECT/urbanhrpartners/website@REPLACE_DIGEST
+          ports:
+            - name: http1
+              containerPort: 8787
+          env:
+            - {name: UHR_PRODUCTION, value: '1'}
+            - {name: UHR_SECURE_COOKIES, value: '1'}
+            - {name: UHR_TRUST_PROXY, value: '1'}
+            - {name: UHR_TRUSTED_HOSTS, value: 'urbanhrpartnersconsulting.com,www.urbanhrpartnersconsulting.com'}
+            - {name: UHR_INTEGRATION_BASE_URL, value: ''}
+            - {name: PGHOST, value: '/cloudsql/REPLACE_PROJECT:REPLACE_REGION:urbanhrpartners-db'}
+            - {name: PGPORT, value: '5432'}
+            - {name: PGDATABASE, value: 'urbanhr'}
+            - {name: PGSSLMODE, value: 'disable'}
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef: {name: urbanhr-db-user, key: latest}
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef: {name: urbanhr-db-password, key: latest}
+          resources:
+            limits: {cpu: '1', memory: 2Gi}
+          startupProbe:
+            httpGet: {path: /api/health, port: 8787}
+            initialDelaySeconds: 5
+            timeoutSeconds: 5
+            periodSeconds: 5
+            failureThreshold: 12
+          livenessProbe:
+            httpGet: {path: /api/health, port: 8787}
+            timeoutSeconds: 5
+            periodSeconds: 30
+            failureThreshold: 3
+  traffic:
+    - percent: 100
+      latestRevision: true

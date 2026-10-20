@@ -1,0 +1,10 @@
+.contact-section > *, .contact-actions, .contact-pill, .contact-pill div { min-width: 0; }
+.contact-pill strong { overflow-wrap: anywhere; }
+.job-card h4 { color: #fff; }
+[hidden] { display: none !important; }
+.hero-copy, .live-orchestrator, .dynamic-route, .workspace-stage, .workspace-view { min-width: 0; }
+@media (max-width: 680px) {
+  .mobile-menu { width: min(390px, 100%); }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { width: 100%; max-width: 100%; overflow: hidden; }
+}

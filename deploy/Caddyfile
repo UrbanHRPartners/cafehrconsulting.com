@@ -1,0 +1,13 @@
+{$UHR_DOMAIN}, www.{$UHR_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy app:8787
+
+  header {
+    -Server
+  }
+
+  log {
+    output stdout
+    format json
+  }
+}

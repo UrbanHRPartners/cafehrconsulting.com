@@ -1,0 +1,15 @@
+[
+  {"ParameterKey":"ProjectName","ParameterValue":"urbanhrpartners"},
+  {"ParameterKey":"DomainName","ParameterValue":"urbanhrpartnersconsulting.com"},
+  {"ParameterKey":"HostedZoneId","ParameterValue":"REPLACE_WITH_ROUTE53_ZONE_ID"},
+  {"ParameterKey":"ImageUri","ParameterValue":"REPLACE_WITH_ECR_IMAGE_URI@SHA256_DIGEST"},
+  {"ParameterKey":"VpcId","ParameterValue":"REPLACE_WITH_VPC_ID"},
+  {"ParameterKey":"PublicSubnetIds","ParameterValue":"subnet-public-a,subnet-public-b"},
+  {"ParameterKey":"PrivateSubnetIds","ParameterValue":"subnet-private-a,subnet-private-b"},
+  {"ParameterKey":"CloudFrontOriginPrefixListId","ParameterValue":"REPLACE_WITH_CLOUDFRONT_PREFIX_LIST_ID"},
+  {"ParameterKey":"RegionalCertificateArn","ParameterValue":"REPLACE_WITH_REGIONAL_ACM_CERTIFICATE_ARN"},
+  {"ParameterKey":"CloudFrontCertificateArn","ParameterValue":"REPLACE_WITH_US_EAST_1_ACM_CERTIFICATE_ARN"},
+  {"ParameterKey":"IntegrationBaseUrl","ParameterValue":""},
+  {"ParameterKey":"DesiredTasks","ParameterValue":"2"},
+  {"ParameterKey":"MaximumTasks","ParameterValue":"8"}
+]

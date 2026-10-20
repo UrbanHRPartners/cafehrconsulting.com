@@ -1,0 +1,17 @@
+{
+  "name": "UrbanHRPartners Consulting",
+  "short_name": "UrbanHRPartners",
+  "description": "Transforming Workplaces. Strengthening Business.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07182d",
+  "theme_color": "#07182d",
+  "icons": [
+    {
+      "src": "/assets/brand/urbanhrpartnersconsulting-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
