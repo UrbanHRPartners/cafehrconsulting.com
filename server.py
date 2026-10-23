@@ -200,20 +200,25 @@ class Handler(BaseHTTPRequestHandler):
         th=hashlib.sha256(raw.encode()).hexdigest(); row=self.app.store.one("SELECT s.*,u.email,u.name,u.role,u.tenant_id,t.name tenant_name,u.active,u.mfa_state FROM sessions s JOIN users u ON u.id=s.user_id JOIN tenants t ON t.id=u.tenant_id WHERE s.token_hash=?",(th,))
         if not row or row["expires_at"]<int(time.time()) or not row["active"]: return None
         return row
-    def csrf_token(self):
+    def csrf_token(self,create=False):
         s=self.session()
         if s:return s["csrf_token"]
-        key=hashlib.sha256(self.ip().encode()).hexdigest(); current=int(time.time()); record=self.app.store.one("SELECT token,expires_at FROM anonymous_csrf WHERE visitor_hash=?",(key,))
+        visitor=self.cookie("uhr_visitor")
+        if not re.fullmatch(r"[A-Za-z0-9_-]{43}",visitor):
+            if not create:return ""
+            visitor=secrets.token_urlsafe(32)
+            secure="; Secure" if os.getenv("UHR_SECURE_COOKIES","0")=="1" else ""
+            self._visitor_cookie=f"uhr_visitor={visitor}; Path=/; HttpOnly; SameSite=Lax; Max-Age=600{secure}"
+        key=hashlib.sha256(visitor.encode()).hexdigest();current=int(time.time())
+        record=self.app.store.one("SELECT token,expires_at FROM anonymous_csrf WHERE visitor_hash=?",(key,))
         if record and record["expires_at"]>=current:return record["token"]
+        if not create:return ""
         token=secrets.token_urlsafe(24);expires=current+600
-        if record:self.app.store.execute("UPDATE anonymous_csrf SET token=?,expires_at=? WHERE visitor_hash=?",(token,expires,key))
-        else:
-            try:self.app.store.execute("INSERT INTO anonymous_csrf(visitor_hash,token,expires_at) VALUES(?,?,?)",(key,token,expires))
-            except Exception:self.app.store.execute("UPDATE anonymous_csrf SET token=?,expires_at=? WHERE visitor_hash=?",(token,expires,key))
-        return token
+        self.app.store.execute("INSERT INTO anonymous_csrf(visitor_hash,token,expires_at) VALUES(?,?,?) ON CONFLICT(visitor_hash) DO UPDATE SET token=excluded.token,expires_at=excluded.expires_at WHERE anonymous_csrf.expires_at<?",(key,token,expires,current))
+        return self.app.store.one("SELECT token FROM anonymous_csrf WHERE visitor_hash=?",(key,))["token"]
     def require_csrf(self):
         supplied=self.headers.get("X-CSRF-Token",""); expected=self.csrf_token()
-        if not hmac.compare_digest(supplied,expected): raise PermissionError("Request verification failed")
+        if not supplied or not expected or not hmac.compare_digest(supplied,expected):raise PermissionError("Request verification failed")
     def rate_limit(self,bucket,limit,window):
         visitor=hashlib.sha256(self.ip().encode()).hexdigest();current=int(time.time());cutoff=current-window
         self.app.store.execute("DELETE FROM rate_events WHERE occurred_at<?",(cutoff,))
@@ -227,7 +232,9 @@ class Handler(BaseHTTPRequestHandler):
             integration_base=self.app.config.get("integration_base_url","")
             connected=integration_base.startswith("https://") and "127.0.0.1" not in integration_base and "localhost" not in integration_base
             return self.json(200,{"status":"ok","service":"UrbanHRPartners Consulting gateway","time":now(),"production":self.app.production,"integrations":"configured" if connected else "connector-required"})
-        if path=="/api/auth/csrf":return self.json(200,{"csrf_token":self.csrf_token()})
+        if path=="/api/auth/csrf":
+            token=self.csrf_token(create=True)
+            return self.json(200,{"csrf_token":token},getattr(self,"_visitor_cookie",None))
         if path=="/api/jobs":
             catalog=json.loads((self.app.root/"config/jobs.json").read_text(encoding="utf-8"));return self.json(200,{"jobs":[x for x in catalog["jobs"] if x.get("status")=="published"]})
         if path=="/api/analytics/public-summary":return self.public_summary()
@@ -432,6 +439,7 @@ class Handler(BaseHTTPRequestHandler):
     def static(self,path):
         rel="index.html" if path in {"","/"} else path.lstrip("/"); dest=(self.app.root/rel).resolve()
         if self.app.root!=dest and self.app.root not in dest.parents:return self.json(403,{"error":"Invalid path"})
+        if any(part.startswith(".") for part in Path(rel).parts) or dest.suffix.lower() in {".py",".db",".sqlite3",".pem",".p7m",".log",".yml",".yaml"}:return self.json(403,{"error":"Internal file is not publicly served"})
         if not dest.is_file():return self.json(404,{"error":"Not found"})
         if "assets/media/source" in dest.as_posix():return self.json(403,{"error":"Internal reference media is not publicly served"})
         body=dest.read_bytes();self.send_response(200);self.security_headers(mimetypes.guess_type(dest.name)[0] or "application/octet-stream");self.send_header("Content-Length",str(len(body)));self.end_headers();self.wfile.write(body)
