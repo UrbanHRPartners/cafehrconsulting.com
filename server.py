@@ -249,14 +249,12 @@ class Handler(BaseHTTPRequestHandler):
             if not s:return self.json(401,{"error":"Authentication required"})
             integration_base=self.app.config.get("integration_base_url","")
             integration_ready=integration_base.startswith("https://") and "127.0.0.1" not in integration_base and "localhost" not in integration_base
-            if self.app.production and not integration_ready:
-                self.app.store.audit("portal.connector_required","integration-registry",self.ip(),s["user_id"],s["tenant_id"])
-                return self.json(503,{"error":"The governed integration gateway is not configured for production"})
             allowed=[]
-            for item in self.app.config["integrations"]:
-                if s["role"] in item["roles"]:allowed.append({**item,"url":self.app.config["integration_base_url"]+item["path"]})
-            self.app.store.audit("portal.view","integration-registry",self.ip(),s["user_id"],s["tenant_id"],{"count":len(allowed)})
-            return self.json(200,{"user":{"name":s["name"],"email":s["email"],"role":s["role"],"tenant_id":s["tenant_id"],"tenant_name":s["tenant_name"],"mfa_state":s["mfa_state"]},"integrations":allowed})
+            if integration_ready:
+                for item in self.app.config["integrations"]:
+                    if s["role"] in item["roles"]:
+                        allowed.append({**item,"url":self.app.config["integration_base_url"]+item["path"]})
+            return self.json(200,{"user":{"name":s["name"],"email":s["email"],"role":s["role"],"tenant_id":s["tenant_id"],"tenant_name":s["tenant_name"],"mfa_state":s["mfa_state"]},"integrations":allowed,"integration_status":"configured" if integration_ready else "connector-required"})
         if path=="/api/media":
             cat=json.loads((self.app.root/"media/catalog.json").read_text(encoding="utf-8")); return self.json(200,{"assets":[x for x in cat["assets"] if x["publication_state"]=="published"]})
         return self.static(path)
